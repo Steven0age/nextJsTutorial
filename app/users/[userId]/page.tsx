@@ -1,5 +1,9 @@
 import { fetchUser } from "@/lib/users";
 
+export async function generateStaticParams() {
+  return [{ userId: "1" }, { userId: "2" }, { userId: "3" }];
+}
+
 export default async function UserPage({
   params,
 }: {
