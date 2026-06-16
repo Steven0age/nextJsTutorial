@@ -12,6 +12,13 @@ export default function Home() {
           height={20}
           priority
         />
+        <Image
+          src="https://stephan-haak.com/wp-content/uploads/2022/07/5_Stephan_Bild-scaled-e1659078805913-768x576.jpg"
+          alt="import img with dif hostname"
+          width={400}
+          height={20}
+          priority
+        />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the page.tsx file.
