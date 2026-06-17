@@ -3,34 +3,54 @@
 import Button from "@/components/Button";
 import { useState } from "react";
 
-async function makePostRequest(input: string) {
-  // for serverside fetching we need to use the absolute url, for clientside fetching we can use the relative url:
-  //const response = await fetch(`${process.env.LOCAL_URL}/api/test`, {
+//
+//
+// // the following code is for testing the api route // //
 
-  const response = await fetch("api/test", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name: input }),
-  });
+// async function makePostRequest(input: string) {
+//   // for serverside fetching we need to use the absolute url, for clientside fetching we can use the relative url:
+//   //const response = await fetch(`${process.env.LOCAL_URL}/api/test`, {
 
-  const data = await response.json();
-  //console.log(data);
-  return { data };
-}
+//   const response = await fetch("api/test", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ name: input }),
+//   });
+
+//   const data = await response.json();
+//   //console.log(data);
+//   return { data };
+// }
+
+// export default function SayHello() {
+//   console.log("hey, is this in the server or client?");
+//   //console.log(data);
+//   const [message, setMessage] = useState("");
+//   const [input, setInput] = useState("");
+
+//   const btnClick = async (input: string) => {
+//     const { data } = await makePostRequest(input);
+//     console.log("API data =", data);
+//     setMessage(data.message);
+//   };
+
+//
+//
+// // the following code is for deployment on github using browser renedering insteat of an api call // //
 
 export default function SayHello() {
-  console.log("hey, is this in the server or client?");
-  //console.log(data);
   const [message, setMessage] = useState("");
+
   const [input, setInput] = useState("");
 
-  const btnClick = async (input: string) => {
-    const { data } = await makePostRequest(input);
-    console.log("API data =", data);
-    setMessage(data.message);
+  const btnClick = (input: string) => {
+    setMessage(
+      `Hello, ${input}, greetings from the client! (this message is generated directly in the browser)`,
+    );
   };
+
   return (
     <div>
       <h1 className="pt-14 font-bold text-5xl text-blue-400">Say hello page</h1>
