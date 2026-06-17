@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [{ hostname: "stephan-haak.com" }],
   },
-  // basePath: "/nextJsTutorial",
-  // assetPrefix: "/nextJsTutorial/",
+  basePath: "/nextJsTutorial",
+  assetPrefix: "/nextJsTutorial",
 };
 
 export default nextConfig;
